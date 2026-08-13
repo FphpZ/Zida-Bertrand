@@ -1,0 +1,1248 @@
+<!doctype html>
+<html lang="fr" class="book-mode">
+
+<head>
+  <title>ZIDA Bertrand — Portfolio Livre</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portfolio de ZIDA Bertrand — développement web, électronique et design. Projets, services et contact." />
+  <meta name="theme-color" content="#0b061f" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" href="image/moi/Portrait.png" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+  <link href="stylo.css?v=neon1" rel="stylesheet" />
+  <link href="book.css?v=neon-loop1" rel="stylesheet" />
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
+</head>
+
+<body class="theme-dark book-mode">
+  <div class="starfield" id="starfield" aria-hidden="true"></div>
+
+  <header class="header book-header">
+    <div class="book-brand">
+      <a href="#home" class="logo" data-chapter="home">ZIDA Bertrand</a>
+    </div>
+
+    <nav class="navbar book-toc" id="book-toc" aria-label="Sommaire du livre">
+      <a href="#home" data-chapter="home" class="active">Accueil</a>
+      <a href="#expertise" data-chapter="expertise">Expertise</a>
+
+      <div class="nav-item has-submenu">
+        <a href="#about" data-chapter="about" class="nav-parent" aria-haspopup="menu" aria-expanded="false"
+          aria-controls="about-submenu">
+          À propos
+          <i class="bx bx-chevron-down nav-caret" aria-hidden="true"></i>
+        </a>
+        <div class="nav-submenu" id="about-submenu" role="menu" aria-label="Sous-menu À propos" hidden>
+          <a href="#about" data-chapter="about" role="menuitem">Qui suis-je</a>
+          <a href="#histoire" data-chapter="histoire" role="menuitem">Notre histoire</a>
+          <a href="#univers" data-chapter="univers" role="menuitem">Mon univers</a>
+          <a href="#entreprise" data-chapter="entreprise" role="menuitem">Notre entreprise</a>
+        </div>
+      </div>
+
+      <div class="nav-item has-submenu">
+        <a href="#service" data-chapter="service" class="nav-parent" aria-haspopup="menu" aria-expanded="false"
+          aria-controls="services-submenu">
+          Services
+          <i class="bx bx-chevron-down nav-caret" aria-hidden="true"></i>
+        </a>
+        <div class="nav-submenu" id="services-submenu" role="menu" aria-label="Sous-menu Services" hidden>
+          <a href="#maintenance" data-chapter="maintenance" role="menuitem">Maintenance</a>
+          <a href="#devweb" data-chapter="devweb" role="menuitem">Développement web</a>
+          <a href="#mobile" data-chapter="mobile" role="menuitem">Mobile</a>
+          <a href="#formation" data-chapter="formation" role="menuitem">Formation</a>
+        </div>
+      </div>
+
+      <div class="nav-item has-submenu">
+        <a href="#portfolio" data-chapter="portfolio" data-chapter-group="portfolio" class="nav-parent"
+          aria-haspopup="menu" aria-expanded="false" aria-controls="portfolio-submenu">
+          Portfolio
+          <i class="bx bx-chevron-down nav-caret" aria-hidden="true"></i>
+        </a>
+        <div class="nav-submenu" id="portfolio-submenu" role="menu" aria-label="Sous-menu Portfolio" hidden>
+          <a href="#portfolio" data-chapter="portfolio" role="menuitem">Vue d'ensemble</a>
+          <a href="#portfolio-selection" data-chapter="portfolio-selection" role="menuitem">Sélection 2026</a>
+          <a href="#portfolio-method" data-chapter="portfolio-method" role="menuitem">Méthode</a>
+          <a href="#portfolio-next" data-chapter="portfolio-next" role="menuitem">À venir</a>
+        </div>
+      </div>
+      <a href="#testimonials" data-chapter="testimonials">Témoignages</a>
+      <a href="#contact" data-chapter="contact">Contact</a>
+    </nav>
+
+    <div class="book-header-socials" aria-label="Accès rapides">
+      <button type="button" id="theme-toggle" aria-label="Changer le thème" title="Basculer thème clair/sombre">
+        <i class="bx bx-moon" id="theme-icon"></i>
+      </button>
+      <a href="https://web.facebook.com/profile.php?id=61565428830844" class="book-social-link" aria-label="Facebook"
+        title="Facebook" target="_blank" rel="noopener">
+        <i class="bx bxl-facebook"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/bertrand-zida-160197275/" class="book-social-link" aria-label="LinkedIn"
+        title="LinkedIn" target="_blank" rel="noopener">
+        <i class="bx bxl-linkedin"></i>
+      </a>
+      <a href="mailto:zhardwarezb@gmail.com" class="book-social-link" aria-label="Envoyer un email" title="Email">
+        <i class="bx bx-envelope"></i>
+      </a>
+    </div>
+
+    <button type="button" id="menu-icon" class="bx bx-menu" aria-label="Ouvrir le menu" aria-controls="book-toc"
+      aria-expanded="false"></button>
+  </header>
+
+  <a class="floating-whatsapp"
+    href="https://wa.me/22651732373?text=Bonjour%20Bertrand%2C%20je%20souhaite%20discuter%20d%27un%20projet."
+    target="_blank" rel="noopener" aria-label="Écrire à Bertrand via WhatsApp">
+    <span class="floating-whatsapp-label">Écrivez-moi via WhatsApp</span>
+    <span class="floating-whatsapp-badge" aria-hidden="true">
+      <i class="bx bxl-whatsapp"></i>
+    </span>
+  </a>
+
+  <main class="book" id="book" aria-label="Portfolio en livre à feuilleter">
+    <div class="book-shell">
+      <div class="book-ambient" aria-hidden="true"></div>
+
+      <!-- Conteneur PageFlip : chaque .flip-page = une feuille -->
+      <div class="flip-book" id="flipBook">
+        <!-- COUVERTURE -->
+        <div class="flip-page page-hard page-cover-front" data-density="hard" data-chapter="cover">
+          <div class="page-sheet cover-sheet cover-with-photo cover-neon" id="coverFront">
+            <div class="cover-photo-bg" aria-hidden="true">
+              <img src="image/moi/Portrait.png" alt="" loading="eager" decoding="async" />
+            </div>
+            <div class="cover-photo-veil" aria-hidden="true"></div>
+            <div class="cover-glow" aria-hidden="true"></div>
+            <div class="cover-grid" aria-hidden="true"></div>
+            <div class="cover-scanlines" aria-hidden="true"></div>
+            <div class="cover-frame" aria-hidden="true">
+              <span class="cover-corner cover-corner-tl"></span>
+              <span class="cover-corner cover-corner-tr"></span>
+              <span class="cover-corner cover-corner-bl"></span>
+              <span class="cover-corner cover-corner-br"></span>
+            </div>
+
+            <!-- Néon tech — titre animé -->
+            <div class="cover-inner" data-cover-animate>
+
+
+
+              <h1 class="cover-title" aria-label="ZIDA Bertrand">
+                <span class="cover-title-line" data-title-line="ZIDA"></span>
+                <span class="cover-title-line cover-title-accent" data-title-line="BERTRAND"></span>
+              </h1>
+
+              <p class="cover-signed cover-anim" data-anim="signed">
+                &lt; digital_creator /&gt;
+              </p>
+
+              <p class="cover-sub cover-typewriter" data-typewriter
+                data-type-lines="Développeur Web · Électronicien|Designer · Formateur"
+                aria-label="Développeur Web · Électronicien. Designer · Formateur.">
+                <span class="cover-type-prefix" aria-hidden="true">&gt;_</span>
+                <span class="cover-type-text"></span><span class="cover-type-cursor" aria-hidden="true"></span>
+              </p>
+
+              <div class="cover-neon-line cover-anim" data-anim="line"></div>
+
+              <p class="cover-hint cover-anim" data-anim="hint">
+                <span class="cover-hint-text">Tournez la page pour ouvrir le livre</span>
+                <span class="cover-hint-arrow" aria-hidden="true">→</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACCUEIL GAUCHE -->
+        <div class="flip-page" data-chapter="home">
+          <div class="page-sheet">
+            <div class="page-inner">
+              <p class="page-kicker">I · Présentation</p>
+              <h1>ZIDA Bertrand</h1>
+              <p class="hero-lead">
+                Développeur Web • Électronicien • Designer • Formateur
+              </p>
+              <p class="hero-lead">
+                <strong>Je crée des expériences numériques innovantes et des
+                  solutions électroniques qui transforment les idées en
+                  réalité.</strong>
+                Mon objectif : fusionner la technologie, le design et
+                l'ingénierie pour résoudre vos défis les plus complexes.
+              </p>
+              <div class="hero-ctas">
+                <button type="button" class="btn primary" data-goto="contact">
+                  Parlons de ton projet
+                </button>
+                <button type="button" class="btn ghost" data-goto="portfolio">
+                  Voir mes réalisations
+                </button>
+              </div>
+            </div>
+            <span class="page-num">1</span>
+          </div>
+        </div>
+
+        <!-- ACCUEIL DROITE -->
+        <div class="flip-page" data-chapter="home">
+          <div class="page-sheet">
+            <!-- Image pleine page en arrière-plan -->
+            <div class="home-visual">
+              <div class="portrait-frame">
+                <span class="portrait-glow" aria-hidden="true"></span>
+                <span class="portrait-ring" aria-hidden="true"></span>
+                <picture>
+                  <source srcset="image/moi/Portrait.png" type="image/png" />
+                  <img src="image/moi/Portrait.png" alt="Portrait professionnel de ZIDA Bertrand" width="1024"
+                    height="1024" loading="eager" decoding="async" class="portrait-img" />
+                </picture>
+                <span class="portrait-accent" aria-hidden="true"></span>
+              </div>
+            </div>
+            <!-- Page inner vide pour garder la structure -->
+            <div class="page-inner page-visual-center"></div>
+            <span class="page-num">2</span>
+          </div>
+        </div>
+
+        <!-- EXPERTISE GAUCHE -->
+        <div class="flip-page" data-chapter="expertise">
+          <div class="page-sheet">
+            <div class="page-inner">
+              <p class="page-kicker">II · Expertise</p>
+              <h2 class="heading">Mes <span>4 Piliers</span></h2>
+              <p class="section-subtitle">
+                Domaines d'excellence où je crée de la valeur
+              </p>
+              <div class="expertise-stack">
+                <div class="expertise-card">
+                  <div class="expertise-icon">
+                    <i class="bx bx-code-alt"></i>
+                  </div>
+                  <h3>Web Development</h3>
+                  <p>
+                    Applications web responsives, modernes et performantes.
+                    Solutions numériques qui engagent vos utilisateurs.
+                  </p>
+                  <!-- Stack technique -->
+                  <div class="tech-stack">
+                    <span class="tech-badge">Vue.js</span>
+                    <span class="tech-badge">Next.js</span>
+                    <span class="tech-badge">PHP</span>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">MySQL</span>
+                    <span class="tech-badge">PostgreSQL</span>
+                  </div>
+                  <div class="expertise-stats">
+                    <span class="stat-number">6+</span>
+                    <span class="stat-label">Projets Web</span>
+                  </div>
+                </div>
+                <div class="expertise-card">
+                  <div class="expertise-icon">
+                    <i class="bx bx-wrench"></i>
+                  </div>
+                  <h3>Électronique &amp; IoT</h3>
+                  <p>
+                    Maintenance ordinateurs HP,DELL,LENOVO,ASUS et MACBOOK .
+                    Du hardware à la réalité.
+                  </p>
+                  <!-- Stack technique -->
+                  <div class="tech-stack">
+                    <span class="tech-badge">Arduino</span>
+                    <span class="tech-badge">Raspberry Pi</span>
+                    <span class="tech-badge">Micro-soudure</span>
+                  </div>
+                  <div class="expertise-stats">
+                    <span class="stat-number">70+</span>
+                    <span class="stat-label">Ordinateurs dépannés</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="page-num">3</span>
+          </div>
+        </div>
+
+        <!-- EXPERTISE DROITE -->
+        <div class="flip-page" data-chapter="expertise">
+          <div class="page-sheet">
+            <div class="page-inner">
+              <p class="page-kicker right-align">Suite · Expertise</p>
+              <div class="expertise-stack">
+                <div class="expertise-card">
+                  <div class="expertise-icon">
+                    <i class="bx bx-color"></i>
+                  </div>
+                  <h3>UX/UI Design</h3>
+                  <p>
+                    Design intuitif et esthétique pour web et mobile.
+                    Interfaces qui ravissent les utilisateurs.
+                  </p>
+                  <!-- Stack technique -->
+                  <div class="tech-stack">
+                    <span class="tech-badge">Flutter</span>
+                    <span class="tech-badge">Figma</span>
+                    <span class="tech-badge">Adobe XD</span>
+                  </div>
+                  <div class="expertise-stats">
+                    <span class="stat-number">25+</span>
+                    <span class="stat-label">Interfaces Design</span>
+                  </div>
+                </div>
+                <div class="expertise-card">
+                  <div class="expertise-icon">
+                    <i class="bx bx-book-open"></i>
+                  </div>
+                  <h3>Formation</h3>
+                  <p>
+                    Ateliers personnalisés et coaching. Compétences pour l'ère
+                    numérique.
+                  </p>
+                  <div class="expertise-stats">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Personnes formées</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="page-num">4</span>
+          </div>
+        </div>
+
+        <!-- ABOUT GAUCHE -->
+        <div class="flip-page" data-chapter="about">
+          <div class="page-sheet">
+            <!-- Image pleine page en arrière-plan -->
+            <div class="about-img book-about-img">
+              <img src="image/moi/presentation.png" alt="ZIDA Bertrand dans un laboratoire de robotique" loading="lazy" width="1024"
+                height="1024" />
+            </div>
+            <!-- Page inner vide pour garder la structure -->
+            <div class="page-inner page-visual-center"></div>
+            <span class="page-num">5</span>
+          </div>
+        </div>
+
+        <!-- ABOUT DROITE -->
+        <div class="flip-page" data-chapter="about">
+          <div class="page-sheet">
+            <div class="page-inner">
+              <h2 class="heading">À propos <span>de moi</span></h2>
+              <h3 class="about-tagline">
+                Transformer les idées en solutions innovantes
+              </h3>
+              <p>
+                Je suis un créateur de solutions numériques basé à
+                Ouagadougou. Depuis mes débuts, j'ai combiné développement
+                web, électronique et design pour créer des solutions qui font
+                vraiment la différence.
+              </p>
+              <p class="about-why">
+                <strong>Mon WHY :</strong> Inspirer les entreprises et les
+                individus à transformer leurs visions en projets concrets.
+                L'innovation naît de la fusion entre créativité, technologie
+                et exécution.
+              </p>
+              <div class="about-stats">
+                <div class="stat-item">
+                  <h4 class="stat-value">3+</h4>
+                  <p class="stat-desc">Années d'expérience</p>
+                </div>
+                <div class="stat-item">
+                  <h4 class="stat-value">6+</h4>
+                  <p class="stat-desc">Projets réalisés</p>
+                </div>
+                <div class="stat-item">
+                  <h4 class="stat-value">50+</h4>
+                  <p class="stat-desc">Clients satisfaits</p>
+                </div>
+                <div class="stat-item">
+                  <h4 class="stat-value">7+</h4>
+                  <p class="stat-desc">Formations</p>
+                </div>
+              </div>
+              <button type="button" class="btn" data-goto="portfolio">
+                Voir mes meilleurs projets
+              </button>
+            </div>
+            <span class="page-num">6</span>
+          </div>
+        </div>
+
+        <!-- HISTOIRE GAUCHE -->
+        <div class="flip-page" data-chapter="histoire">
+          <div class="page-sheet">
+            <div class="page-inner">
+              <p class="page-kicker">III · Notre histoire</p>
+              <h2 class="heading">Mon <span>parcours</span></h2>
+              <p class="section-subtitle">
+                Le chemin qui a façonné mon expertise
+              </p>
+              <div class="inspiration-list">
+                <ul>
+                  <li>
+                    <span> Je suis <strong>ZIDA Bertrand</strong>, entrepreneur dans le
+                      numérique, basé à Ouagadougou.Je me suis orienté vers l'informatique, génie
+                      logiciel à l'université.</span>
+
+                  </li>
+                  <li>
+                    <span>
+                      En 2023, j'ai débuté dans l'electronique et au IoT au <strong>Laboratoire de Fabrication </strong>
+                      de
+                      Burkina Business Incubator </span>
+                  </li>
+                  <li>
+                    <span>
+                      En 2024, j'ai fait mes premiers pas dans la maintenance
+                      informatique au <strong>Laboratoire de Réparaton d'Innovation et d'Apprentissage </strong> </span>
+                  </li>
+                  <li>
+                    <span>
+                      En 2024, j'ai bénéficié d'une formation dans la maintenance des photocopieuses au sein de
+                      <strong>CVP SARL</strong>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      En 2025, j'ai bénéficié d'une formation dans le développement d'applications web au sein de
+                      <strong>ECODEV International</strong>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      En Mai 2026, j'ai accompagné les élèves de Focus School dans la programmation et la
+                      robotique sous la supervision de HEADQUARTERS
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <span class="page-num">7</span>
+          </div>
+        </div>
+
+        <!-- MON UNIVERS GAUCHE -->
+        <div class="flip-page" data-chapter="univers">
+          <div class="page-sheet">
+            <div class="page-inner">
+              <p class="page-kicker">III · Mon univers</p>
+              <h2 class="heading">Ce qui nourrit <span>ma vision</span></h2>
+              <p class="section-subtitle">
+                Les idées, figures et récits qui influencent ma manière de penser et de construire
+              </p>
+
+              <div class="inspiration-grid">
+                <article class="inspiration-group">
+                  <div class="inspiration-group-head">
+                    <i class="bx bx-book-open"></i>
+                    <h3>Livres qui structurent ma pensée</h3>
+                  </div>
+                  <ul class="inspiration-list">
+                    <li>
+                      <strong> Simon senik - Trouver son pourquoi</strong>
+                      <span>
+                        M'aide à rester guidé par une vision claire et par le sens profond de ce que je construis.
+                      </span>
+                    </li>
+
+                    <li>
+                      <strong>Og Mandino - Le plus grand vendeur du monde</strong>
+                      <span>
+                        M'inspire par la discipline, la persévérance et la qualité de la relation humaine.
+                      </span>
+                    </li>
+
+                    <li>
+                      <strong>Elon, l'homme qui va changer le monde</strong>
+                      <span>
+                        M'inspire par l'audace, la vision et la capacité à transformer des idées ambitieuses en projets
+                        réels.
+                      </span>
+                    </li>
+                    <li>
+                      <strong>Thomas Shakara parle</strong>
+                      <span>
+                        Me marque par la force des convictions, la discipline et le sens du devoir.
+                      </span>
+                    </li>
+                    ::
+                  </ul>
+                </article>
+                <article class="inspiration-group">
+                  <div class="inspiration-group-head">
+                    <i class="bx bx-user-pin"></i>
+                    <h3>Personnages qui nourrissent mon ambition</h3>
+                  </div>
+                  <ul class="inspiration-list">
+                    <li>
+                      <strong>Elon Musk</strong>
+                      <span>
+                        Pour sa capacité à penser grand, à construire vite et à transformer une vision en exécution
+                        concrète.
+                      </span>
+                    </li>
+                    <li>
+                      <strong>Mohamed Ali</strong>
+                      <span>
+                        Pour le courage, la confiance en soi et la force mentale face aux défis.
+                      </span>
+                    </li>
+                    <li>
+                      <strong>Idriss Aberkane</strong>
+                      <span>
+                        Pour sa réflexion sur la connaissance, l'intelligence et la puissance des idées bien comprises.
+                      </span>
+                    </li>
+                    <li>
+                      <strong>Thomas Sankara</strong>
+                      <span>
+                        Pour l'intégrité, la vision et l'engagement au service des autres.
+                      </span>
+                    </li>
+                  </ul>
+                </article>
+              </div>
+            </div>
+            <span class="page-num">8</span>
+          </div>
+        </div>
+
+        <!-- MON UNIVERS DROITE -->
+        <div class="flip-page" data-chapter="univers">
+          <div class="page-sheet">
+            <div class="page-inner">
+              <p class="page-kicker right-align">Suite · Mon univers</p>
+              <h2 class="heading">Films, séries et mangas <span>qui me marquent</span></h2>
+              <p class="section-subtitle">
+                Des œuvres qui renforcent ma discipline, ma résilience et ma manière d'agir
+              </p>
+              <div class="inspiration-grid">
+                <article class="inspiration-group">
+                  <div class="inspiration-group-head">
+                    <i class="bx bx-film"></i>
+                    <h3>Films et séries qui m'ont marqué</h3>
+                  </div>
+                  <ul class="inspiration-list">
+                    <li>
+                      <strong>Merlin</strong>
+                      <span>
+                        M'inspire par la sagesse, la destinée et la construction progressive de soi.
+                      </span>
+                    </li>
+                    <li>
+                      <strong>S.W.A.T.</strong>
+                      <span>
+                        Me parle d'esprit d'équipe, de rigueur et de courage dans l'action.
+                      </span>
+                    </li>
+
+                    <li>
+                      <strong>Devils</strong>
+                      <span>
+                        M'accroche par l'ambition, la stratégie et la pression des grands enjeux.
+                      </span>
+                    </li>
+                    <li>
+                      <strong>Billions</strong>
+                      <span>
+                        Me stimule par la compétition, la négociation et la maîtrise du jeu à haut niveau.
+                      </span>
+                    </li>
+                  </ul>
+                </article>
+                <article class="inspiration-group">
+                  <div class="inspiration-group-head">
+                    <i class="bx bx-joystick"></i>
+                    <h3>Mangas qui m'ont marqué</h3>
+                  </div>
+                  <ul class="inspiration-list">
+                    <li>
+                      <strong>Kuroko no Basket</strong>
+                      <span>
+                        M'inspire par l'intelligence collective, la progression et la force du jeu d'équipe.
+                      </span>
+                    </li>
+                    <li>
+                      <strong>L'Attaque des Titans</strong>
+                      <span>
+                        Me marque par la détermination, le dépassement de soi et la vision face à l'adversité.
+                      </span>
+                    </li>
+                    <li>
+                      <strong>Great Teacher Onizuka</strong>
+                      <span>
+                        Me rappelle l'importance de l'impact humain, de la transmission et du caractère.
+                      </span>
+                    </li>
+                    <li>
+                      <strong>One Piece</strong>
+                      <span>
+                        Me motive par l'aventure, la loyauté et la persévérance jusqu'au bout de l'objectif.
+                      </span>
+                    </li>
+                  </ul>
+                </article>
+              </div>
+            </div>
+            <span class="page-num">9</span>
+          </div>
+        </div>
+
+        <!-- ENTREPRISE GAUCHE -->
+        <div class="flip-page" data-chapter="entreprise">
+          <div class="page-sheet">
+            <div class="page-inner">
+              <p class="page-kicker">III · Notre entreprise</p>
+              <h2 class="heading">Notre <span>entreprise</span></h2>
+              <p class="section-subtitle">
+                Technologie, Design &amp; Ingénierie
+              </p>
+              <div class="company-intro">
+              </div>
+              <div class="company-mission">
+                <h3><i class="bx bx-target-lock"></i> Mission</h3>
+                <p>
+                  Rendre l'innovation accessible : sites et apps performants,
+                  objets connectés fiables, interfaces soignées, et formations
+                  qui montent en compétence.
+                </p>
+              </div>
+              <div class="company-mission">
+                <h3><i class="bx bx-show-alt"></i> Vision</h3>
+                <p>
+                  Devenir une référence ouest-africaine pour les solutions qui
+                  fusionnent software, hardware et expérience utilisateur.
+                </p>
+              </div>
+            </div>
+            <span class="page-num">10</span>
+          </div>
+        </div>
+
+        <!-- ENTREPRISE DROITE -->
+        <div class="flip-page" data-chapter="entreprise">
+          <div class="page-sheet">
+            <div class="page-inner">
+              <p class="page-kicker right-align">Suite · Entreprise</p>
+              <h2 class="heading">Ce que nous <span>offrons</span></h2>
+              <ul class="company-offerings">
+                <li>
+                  <i class="bx bx-code-alt"></i>
+                  <div>
+                    <strong>Développement web</strong>
+                    <span>Applications, sites, backends et expériences digitales
+                      sur mesure.</span>
+                  </div>
+                </li>
+                <li>
+                  <i class="bx bx-chip"></i>
+                  <div>
+                    <strong>Électronique &amp; IoT</strong>
+                    <span>Maintenance, solutions hardware et software adaptées au terrain.</span>
+                    <span>Robotique, initiation et bases de la robotique
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <i class="bx bx-palette"></i>
+                  <div>
+                    <strong>UX / UI Design</strong>
+                    <span>Interfaces claires, esthétiques et orientées
+                      résultats.</span>
+                  </div>
+                </li>
+                <li>
+                  <i class="bx bx-book-open"></i>
+                  <div>
+                    <strong>Formation</strong>
+                    <span>Ateliers pratiques pour individus et équipes.</span>
+                  </div>
+                </li>
+              </ul>
+              <div class="company-cta">
+                <button type="button" class="btn primary" data-goto="contact">
+                  Travailler avec nous
+                </button>
+              </div>
+            </div>
+            <span class="page-num">11</span>
+          </div>
+        </div>
+
+        <!-- SERVICES GAUCHE -->
+        <div class="flip-page" data-chapter="maintenance">
+          <div class="page-sheet">
+            <div class="page-inner">
+              <p class="page-kicker">IV · Maintenance</p>
+
+              <h2 class="heading">Maintenance <span>informatique</span></h2>
+              <p class="section-subtitle">
+                Support technique, prévention et montée en compétence
+              </p>
+              <div class="service-stack">
+                <div class="service-box">
+                  <i class="bx bx-desktop"></i>
+                  <h3>Maintenance opérationnelle</h3>
+                  <p>
+                    Diagnostic, réparation et remise en service de postes de travail.
+                  </p>
+                  <ul class="service-list">
+                    <li>Diagnostic logiciel et matériel</li>
+                    <li>Installation et configuration</li>
+                    <li>Sécurisation et optimisation</li>
+                  </ul>
+                  <button type="button" class="btn" data-goto="contact">
+                    Demander une intervention
+                  </button>
+                </div>
+                <div class="service-box">
+                  <i class="bx bx-network-chart"></i>
+                  <h3>Préventif, réseau &amp; formation</h3>
+                  <p>
+                    Maintenance préventive, réseau local, sauvegarde — et un
+                    programme de formation en 12 modules pratiques.
+                  </p>
+                  <div class="training-badge-row">
+                    <span class="training-badge">Débutant à intermédiaire</span>
+                    <span class="training-badge">Présentiel / Distanciel</span>
+                  </div>
+                  <a href="documents/programme-formation-maintenance.pdf" class="btn" download>
+                    <i class="bx bx-download"></i> Télécharger le programme
+                  </a>
+
+                </div>
+              </div>
+            </div>
+            <span class="page-num">12</span>
+          </div>
+        </div>
+
+        <!-- SERVICES DROITE -->
+        <div class="flip-page" data-chapter="devweb">
+          <div class="page-sheet">
+            <div class="page-inner">
+              <p class="page-kicker right-align">Suite · Développement web</p>
+
+              <div class="service-stack">
+                <div class="service-box">
+                  <i class="bx bx-color"></i>
+                  <h3>UX/UI Design</h3>
+                  <p>
+                    Interfaces qui ravissent les utilisateurs et alignent
+                    marque et objectifs.
+                  </p>
+                  <ul class="service-list">
+                    <li>User Research &amp; Wireframing</li>
+                    <li>Design Systems</li>
+                    <li>Prototype &amp; Animation</li>
+                  </ul>
+                  <button type="button" class="btn" data-goto="contact">
+                    Discuter du design
+                  </button>
+                </div>
+                <div class="service-box">
+                  <i class="bx bx-book-open"></i>
+                  <h3>Formation &amp; Coaching</h3>
+                  <p>
+                    Parcours pratiques en maintenance informatique,
+                    développement et accompagnement individualisé.
+                  </p>
+                  <ul class="service-list">
+                    <li>Programme maintenance en 12 modules</li>
+                    <li>Mentoring personnalisé</li>
+                    <li>Suivi pédagogique et progression</li>
+                  </ul>
+                  <button type="button" class="btn" data-goto="contact">
+                    Demander une formation
+                  </button>
+                </div>
+              </div>
+            </div>
+            <span class="page-num">13</span>
+          </div>
+        </div>
+
+        <!-- MOBILE GAUCHE -->
+        <div class="flip-page" data-chapter="mobile">
+          <div class="page-sheet">
+            <div class="page-inner">
+              <p class="page-kicker">Mobile</p>
+              <h2 class="heading">Solutions <span>Mobile</span></h2>
+              <p class="section-subtitle">
+                Applications et interfaces pour tenir sur la durée
+              </p>
+              <div class="service-stack">
+                <div class="service-box">
+                  <i class="bx bx-mobile"></i>
+                  <h3>Déploiement mobile</h3>
+                  <p>
+                    Expériences rapides, ergonomiques et accessibles, prêtes
+                    pour les usages réels.
+                  </p>
+                  <ul class="service-list">
+                    <li>UX mobile &amp; UI</li>
+                    <li>Optimisation performance</li>
+                    <li>Design responsive</li>
+                  </ul>
+                  <button type="button" class="btn" data-goto="contact">
+                    Parler d’une app mobile
+                  </button>
+                </div>
+                <div class="service-box">
+                  <i class="bx bx-wifi"></i>
+                  <h3>Connectivité</h3>
+                  <p>
+                    Synergie entre application, données et systèmes connectés.
+                  </p>
+                  <ul class="service-list">
+                    <li>APIs &amp; intégrations</li>
+                    <li>Sync &amp; stockage</li>
+                    <li>Fiabilité</li>
+                  </ul>
+                  <button type="button" class="btn" data-goto="contact">
+                    Créer une solution connectée
+                  </button>
+                </div>
+              </div>
+            </div>
+            <span class="page-num">14</span>
+          </div>
+        </div>
+
+        <!-- MOBILE DROITE -->
+        <div class="flip-page" data-chapter="formation">
+          <div class="page-sheet">
+            <div class="page-inner">
+              <p class="page-kicker right-align">Suite · Formation</p>
+              <h2 class="heading">Formation &amp; <span>Coaching</span></h2>
+              <p class="section-subtitle">
+                Monter en compétence, avec méthode
+              </p>
+              <div class="service-stack">
+                <div class="service-box">
+                  <i class="bx bx-rocket"></i>
+                  <h3>Formation Vibe Coding</h3>
+                  <p>
+                    Apprendre à développer plus vite avec l'IA — prompts efficaces, choix
+                    des outils, workflow — sans perdre la maîtrise du code produit.
+                  </p>
+                  <div class="training-badge-row">
+                    <span class="training-badge">Sur mesure</span>
+                    <span class="training-badge">Présentiel / Distanciel</span>
+                  </div>
+                  <button type="button" class="btn" data-goto="contact">
+                    Demander cette formation
+                  </button>
+                </div>
+              </div>
+            </div>
+            <span class="page-num">15</span>
+          </div>
+        </div>
+        <!-- PORTFOLIO SÉLECTION GAUCHE -->
+        <div class="flip-page" data-chapter="portfolio-selection">
+          <div class="page-sheet">
+            <div class="page-inner">
+              <p class="page-kicker">Portfolio · Sélection 2026</p>
+              <h2 class="heading"> projets <span>à mettre en lumière</span></h2>
+              <p class="section-subtitle">
+                Une illustration de mes projets les plus marquants.
+              </p>
+              <div class="featured-project-grid">
+                <article class="featured-project-card">
+                  <img src="image/moi/site vitrine.png" alt="Vibe Coding - Plateforme de développement"
+                    loading="lazy" />
+                  <div class="featured-project-body">
+                    <span class="portfolio-card-badge">Projet 01</span>
+                    <h3>Vibe Coding</h3>
+                    <p>
+                      Plateforme de développement web moderne, déployée sur Vercel.
+                    </p>
+                    <a href="https://yaba-ai-roadmap-renp.vercel.app/" target="_blank" rel="noopener" class="btn small">
+                      <i class="bx bx-link-external"></i> Visiter
+                    </a>
+                  </div>
+                </article>
+                <article class="featured-project-card">
+                  <img src="image/moi/seance de formaton.png" alt="Focus School - Plateforme de formation"
+                    loading="lazy" />
+                  <div class="featured-project-body">
+                    <span class="portfolio-card-badge">Projet 02</span>
+                    <h3>Focus School</h3>
+                    <p>
+                      Plateforme de formation pour l'école Focus School, hébergée sur Vercel.
+                    </p>
+                    <a href="https://tp-focus-school-676t.vercel.app" target="_blank" rel="noopener" class="btn small">
+                      <i class="bx bx-link-external"></i> Visiter
+                    </a>
+                  </div>
+                </article>
+                <article class="featured-project-card">
+                  <img src="image/moi/site vitrine.png" alt="Préparation Tests Canada - Plateforme éducative"
+                    loading="lazy" />
+                  <div class="featured-project-body">
+                    <span class="portfolio-card-badge">Projet 05</span>
+                    <h3>Canada Test Prep</h3>
+                    <p>
+                      Plateforme dédiée à la préparation des tests d'immigration et d'admission au Canada. Exercices, simulations et suivi personnalisé.
+                    </p>
+                    <a href="#" onclick="alert('Lien à venir prochainement'); return false;" class="btn small" style="opacity: 0.7; cursor: not-allowed;">
+                      <i class="bx bx-link-external"></i> En développement
+                    </a>
+                  </div>
+                </article>
+
+              </div>
+              <span class="page-num">16</span>
+            </div>
+          </div>
+
+          <!-- PORTFOLIO SÉLECTION DROITE -->
+          <div class="flip-page" data-chapter="portfolio-selection">
+            <div class="page-sheet">
+              <div class="page-inner">
+                <p class="page-kicker right-align">Suite · Sélection 2026</p>
+                <h2 class="heading">Autre <span>projet phare</span></h2>
+                <p class="section-subtitle">
+                  Une troisième carte met en avant un projet équipe
+                </p>
+
+                <article class="featured-project-card featured-project-card-large">
+                  <img src="image/moi/prototype connecte.png"
+                    alt="Prototype IoT avec interface de suivi présenté comme un cas d'étude" loading="lazy" />
+                  <div class="featured-project-body">
+                    <span class="portfolio-card-badge">Projet 03</span>
+                    <h3>Prototype connecté</h3>
+                    <p>
+                      Cet prototype est un Robot anti-mine basé sur IoT, électronique &
+                      automatisation oeuvrant dans la détection et la neutralisation des mines artisanals. Il est conçu
+                      pour assurer la sécurité des opérateurs et réduire les risques liés à la démination.
+                    </p>
+                  </div>
+                </article>
+                <article class="featured-project-card">
+                  <img src="image/moi/maintenance.png" alt="Réparation téléphones - Service de réparation"
+                    loading="lazy" />
+                  <div class="featured-project-body">
+                    <span class="portfolio-card-badge">Projet 04</span>
+                    <h3>Repair Mobile</h3>
+                    <p>
+                      Plateforme web dédiée à la réparation de téléphones portables de A à Z. Guide complet, tutoriels et diagnostic en ligne.
+                    </p>
+                  </div>
+                </article>
+                <article class="featured-project-card">
+                  <img src="image/moi/seance de formaton.png" alt="Formation maintenance informatique BBI - Session pratique"
+                    loading="lazy" />
+                  <div class="featured-project-body">
+                    <span class="portfolio-card-badge">Projet 06</span>
+                    <h3>Formation Maintenance BBI</h3>
+                    <p>
+                      Programme de formation en maintenance informatique dispensé aux membres de Burkina Business Incubator (BBI). Ateliers pratiques sur le diagnostic, la réparation et l'optimisation de postes de travail.
+                    </p>
+                  </div>
+                </article>
+              </div>
+              <span class="page-num">17</span>
+            </div>
+          </div>
+
+          <!-- PORTFOLIO MÉTHODE GAUCHE -->
+          <div class="flip-page" data-chapter="portfolio-method">
+            <div class="page-sheet">
+              <div class="page-inner">
+                <p class="page-kicker">Portfolio · Méthode</p>
+                <h2 class="heading">Comment je construis <span>un projet</span></h2>
+                <p class="section-subtitle">
+                  Une logique de travail lisible, utile pour rassurer un client
+                </p>
+                <div class="process-grid">
+                  <article class="process-card">
+                    <span class="process-step">01</span>
+                    <h3>Comprendre le besoin</h3>
+                    <p>
+                      Je clarifie l'objectif, le contexte et le résultat attendu
+                      avant de proposer une solution.
+                    </p>
+                  </article>
+                  <article class="process-card">
+                    <span class="process-step">02</span>
+                    <h3>Choisir la bonne réponse</h3>
+                    <p>
+                      Je privilégie une solution adaptée au terrain, réaliste à
+                      produire et simple à maintenir.
+                    </p>
+                  </article>
+                  <article class="process-card">
+                    <span class="process-step">03</span>
+                    <h3>Soigner l'exécution</h3>
+                    <p>
+                      J'accorde de l'importance au rendu, à la clarté et à la
+                      cohérence entre technique et usage.
+                    </p>
+                  </article>
+                  <article class="process-card">
+                    <span class="process-step">04</span>
+                    <h3>Livrer utile</h3>
+                    <p>
+                      Le but final n'est pas seulement de montrer, mais de
+                      fournir quelque chose de réellement exploitable.
+                    </p>
+                  </article>
+                </div>
+              </div>
+              <span class="page-num">18</span>
+            </div>
+          </div>
+
+          <!-- TÉMOIGNAGES GAUCHE -->
+          <div class="flip-page" data-chapter="testimonials">
+            <div class="page-sheet">
+              <div class="page-inner">
+                <p class="page-kicker">VI · Témoignages</p>
+                <h2 class="heading">Pourquoi <span>me choisir</span></h2>
+                <p class="section-subtitle">
+                  Des repères concrets pour évaluer ma façon de collaborer
+                </p>
+                <div class="quote-block">
+                  <i class="bx bxs-quote-alt-left quote-icon"></i>
+                  <p>
+                    La confiance se construit par la clarté, la qualité
+                    d'exécution et la capacité à livrer des solutions utiles.
+                    Cette section met en avant ma manière de travailler, en
+                    attendant l'ajout de retours clients publiés avec leur
+                    accord.
+                  </p>
+                </div>
+                <ul class="testimonial-highlights">
+                  <li>
+                    <i class="bx bx-check-circle"></i> Communication simple et
+                    cadrage clair du besoin
+                  </li>
+                  <li>
+                    <i class="bx bx-check-circle"></i> Exécution soignée et
+                    solutions adaptées au terrain
+                  </li>
+                  <li>
+                    <i class="bx bx-check-circle"></i> Pédagogie, écoute et
+                    expertise multi-domaines
+                  </li>
+                </ul>
+              </div>
+              <span class="page-num">19</span>
+            </div>
+          </div>
+
+          <!-- TÉMOIGNAGES DROITE -->
+          <div class="flip-page" data-chapter="testimonials">
+            <div class="page-sheet">
+              <div class="page-inner">
+                <div class="trust-grid" aria-label="Repères de collaboration">
+                  <article class="trust-card">
+                    <i class="bx bx-compass"></i>
+                    <h3>Cadrage clair</h3>
+                    <p>
+                      Chaque projet démarre par une compréhension précise du
+                      besoin, des priorités et du résultat attendu.
+                    </p>
+                  </article>
+                  <article class="trust-card">
+                    <i class="bx bx-check-shield"></i>
+                    <h3>Exécution soignée</h3>
+                    <p>
+                      J'accorde une attention forte à la lisibilité, à la
+                      cohérence visuelle et à la qualité du rendu final.
+                    </p>
+                  </article>
+                  <article class="trust-card">
+                    <i class="bx bx-layer"></i>
+                    <h3>Polyvalence utile</h3>
+                    <p>
+                      Web, électronique, design et formation se complètent pour
+                      répondre à des besoins concrets, pas seulement esthétiques.
+                    </p>
+                  </article>
+                  <article class="trust-card">
+                    <i class="bx bx-conversation"></i>
+                    <h3>Accompagnement humain</h3>
+                    <p>
+                      L'écoute, la pédagogie et le suivi font partie intégrante
+                      de ma manière de travailler avec mes clients et apprenants.
+                    </p>
+                  </article>
+                </div>
+              </div>
+              <span class="page-num">20</span>
+            </div>
+          </div>
+
+          <!-- CONTACT GAUCHE -->
+          <div class="flip-page" data-chapter="contact">
+            <div class="page-sheet">
+              <div class="page-inner">
+                <p class="page-kicker">VII · Contact</p>
+                <h2 class="heading">Prêt à <span>collaborer ?</span></h2>
+                <p class="section-subtitle">
+                  Écrivez-moi pour discuter de votre projet
+                </p>
+                <div class="contact-assurance">
+                  <p>
+                    Décris ton besoin en quelques lignes: site web, maintenance,
+                    électronique, design ou formation. Je te répondrai avec un
+                    échange clair et une orientation adaptée à ton projet.
+                  </p>
+                </div>
+                <form id="contactForm" aria-label="Formulaire de contact" class="contact-form" novalidate>
+                  <div class="contact-trap" aria-hidden="true">
+                    <label class="sr-only" for="contact-website">Ne pas remplir ce champ</label>
+                    <input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off" />
+                  </div>
+                  <div class="input-box">
+                    <input type="text" name="name" placeholder="Votre nom complet" required autocomplete="name" />
+                    <input type="email" name="email" placeholder="Votre adresse email" required autocomplete="email" />
+                  </div>
+                  <div class="input-box">
+                    <input type="tel" name="phone" placeholder="Numéro de téléphone" autocomplete="tel" />
+                    <input type="text" name="subject" placeholder="Objet du message" />
+                  </div>
+                  <textarea name="message" cols="30" rows="6" placeholder="Détails de votre projet..." required
+                    minlength="10"></textarea>
+                  <input type="submit" value="Envoyer le message" class="btn" />
+                </form>
+                <div id="formFeedback" class="form-feedback" aria-live="polite" hidden>
+                  <p id="feedbackText"></p>
+                </div>
+              </div>
+              <span class="page-num">21</span>
+            </div>
+          </div>
+
+          <!-- CONTACT DROITE -->
+          <div class="flip-page" data-chapter="contact">
+            <div class="contact-info">
+              <h3>Infos de contact</h3>
+
+              <!-- Footer structuré en colonnes -->
+              <footer class="book-footer">
+                <div class="footer-grid">
+                  <!-- Colonne 1 : À propos -->
+                  <div class="footer-column">
+                    <h4>ZIDA Bertrand</h4>
+                    <p>Développement </p>
+                    <p>Électronique</p>
+                    <p>Design</p>
+                    <p>Formation</p>
+                  </div>
+
+                  <!-- Colonne 2 : Liens rapides -->
+                  <div class="footer-column">
+                    <h4>Liens rapides</h4>
+                    <ul class="footer-links">
+                      <li><a href="#" data-goto="home">Accueil</a></li>
+                      <li><a href="#" data-goto="portfolio">Portfolio</a></li>
+                      <li><a href="#" data-goto="services">Services</a></li>
+                      <li><a href="#" data-goto="contact">Contact</a></li>
+                    </ul>
+                  </div>
+
+                  <!-- Colonne 3 : Réseaux sociaux -->
+                  <div class="footer-column">
+                    <h4>Rejoignez-nous</h4>
+                    <div class="footer-socials" aria-label="Mes réseaux">
+                      <a href="https://web.facebook.com/profile.php?id=61565428830844" class="footer-social-link"
+                        aria-label="Facebook" title="Facebook" target="_blank" rel="noopener">
+                        <i class="bx bxl-facebook"></i>
+                      </a>
+                      <a href="https://www.linkedin.com/in/bertrand-zida-160197275/" class="footer-social-link"
+                        aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener">
+                        <i class="bx bxl-linkedin"></i>
+                      </a>
+                      <a href="mailto:zhardwarezb@gmail.com" class="footer-social-link"
+                        aria-label="Envoyer un email" title="Email">
+                        <i class="bx bx-envelope"></i>
+                      </a>
+                      <a href="https://wa.me/22651732373" class="footer-social-link" aria-label="WhatsApp"
+                        title="WhatsApp" target="_blank" rel="noopener">
+                        <i class="bx bxl-whatsapp"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="book-end">
+                  <button type="button" class="btn ghost" data-goto="home">
+                    Retour à la couverture
+                  </button>
+                  <p class="copyright-mini">
+                    © 2026 ZIDA Bertrand · Tous droits réservés
+                  </p>
+                </div>
+              </footer>
+            </div>
+            <span class="page-num">22</span>
+          </div>
+        </div>
+
+        <!-- QUATRIÈME DE COUVERTURE -->
+        <div class="flip-page page-hard page-cover-back" data-density="hard" data-chapter="end">
+          <div class="page-sheet cover-sheet cover-back">
+            <div class="cover-inner">
+
+              <p class="cover-sub cover-typewriter" data-typewriter data-type-lines="BARAKA · ANIKIE|MERCI · THANKS"
+                aria-label="BARAKA · ANIKIE. MERCI · THANKS.">
+                <span class="cover-type-prefix" aria-hidden="true">&gt;_</span>
+                <span class="cover-type-text"></span>
+                <span class="cover-type-cursor" aria-hidden="true"></span>
+              </p>
+
+              <h2 class="cover-title cover-title-sm">Merci</h2>
+
+              <p class="cover-signed cover-anim" data-anim="signed">
+                &lt; Ouagadougou /&gt;
+                &lt; Burkina Faso /&gt;
+                &lt; zhardwarezb@gmail.com /&gt;
+              </p>
+              <div class="cover-line"></div>
+              <p class="cover-hint">← Tournez pour relire</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-controls" role="toolbar" aria-label="Navigation du livre">
+      <button type="button" class="book-nav-btn" id="bookPrev" aria-label="Page précédente">
+        <i class="bx bx-chevron-left"></i>
+        <span>Précédent</span>
+      </button>
+
+      <div class="book-progress" aria-live="polite">
+        <span id="bookPageLabel">Couverture</span>
+        <div class="book-dots" id="bookDots" aria-label="Chapitres"></div>
+      </div>
+
+      <button type="button" class="book-nav-btn" id="bookNext" aria-label="Page suivante">
+        <span>Suivant</span>
+        <i class="bx bx-chevron-right"></i>
+      </button>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="js/vendor/page-flip.browser.js"></script>
+  <script src="script.js?v=neon-loop1" defer></script>
+</body>
+
+</html>
