@@ -1147,7 +1147,7 @@
   }
   
   .book-header-socials {
-    gap: 0.6rem !important; /* Réduire l'écart pour gagner de la place */
+    gap: 1rem !important; /* Augmenté pour éviter que le thème cache le nom */
   }
   
   .book-social-link,
@@ -1538,8 +1538,55 @@ html.book-mode.theme-light .nav-submenu a:hover {
 }
 
 /* Company mission */
+html.book-mode.theme-light .company-mission,
+html.book-mode.theme-light .company-offerings li {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(124, 58, 237, 0.2);
+}
+
 html.book-mode.theme-light .company-mission h3,
 html.book-mode.theme-light .company-mission p {
+  color: #1e293b !important;
+}
+
+html.book-mode.theme-light .company-offerings li strong {
+  color: #1e293b !important;
+}
+
+html.book-mode.theme-light .company-offerings li span {
+  color: #475569 !important;
+}
+
+/* Badges formation en mode clair */
+html.book-mode.theme-light .training-badge {
+  background: rgba(124, 58, 237, 0.12) !important;
+  border-color: rgba(124, 58, 237, 0.3) !important;
+  color: #7c3aed !important;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+/* Quote block (témoignages) en mode clair */
+html.book-mode.theme-light .quote-block {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(124, 58, 237, 0.2);
+}
+
+html.book-mode.theme-light .quote-block p {
+  color: #1e293b !important;
+}
+
+html.book-mode.theme-light .quote-icon {
+  color: #7c3aed !important;
+}
+
+/* Contact assurance en mode clair */
+html.book-mode.theme-light .contact-assurance {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(124, 58, 237, 0.2);
+}
+
+html.book-mode.theme-light .contact-assurance p {
   color: #1e293b !important;
 }
 
@@ -1883,7 +1930,7 @@ html.book-mode.theme-light #theme-toggle {
 
 /* Ajustement léger : descendre juste un peu */
 .cover-inner {
-  margin-top: 3rem; /* Décalage léger vers le bas */
+  margin-top: 2rem; /* Décalage léger vers le bas (réduit de 3rem) */
 }
 
 /* Couverture néon tech */
@@ -2808,6 +2855,20 @@ html.book-mode.theme-light .tech-badge {
 html.book-mode.theme-light .tech-badge:hover {
   background: rgba(124, 58, 237, 0.2);
   border-color: #7c3aed;
+}
+
+/* Stats en mode clair (page À propos) */
+html.book-mode.theme-light .stat-item {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(124, 58, 237, 0.2);
+}
+
+html.book-mode.theme-light .stat-value {
+  color: #7c3aed !important;
+}
+
+html.book-mode.theme-light .stat-desc {
+  color: #1e293b !important;
 }
 
 /* ============================================================
