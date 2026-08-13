@@ -48,7 +48,7 @@
           <a href="#about" data-chapter="about" role="menuitem">Qui suis-je</a>
           <a href="#histoire" data-chapter="histoire" role="menuitem">Notre histoire</a>
           <a href="#univers" data-chapter="univers" role="menuitem">Mon univers</a>
-          <a href="#entreprise" data-chapter="entreprise" role="menuitem">Notre entreprise</a>
+          <a href="#entreprise" data-chapter="entreprise" role="menuitem">Mon activité</a>
         </div>
       </div>
 
@@ -326,8 +326,12 @@
           <div class="page-sheet">
             <!-- Image pleine page en arrière-plan -->
             <div class="about-img book-about-img">
-              <img src="image/moi/presentation.png" alt="ZIDA Bertrand dans un laboratoire de robotique" loading="lazy" width="1024"
+              <img src="image/moi/presentation.png" alt="ZIDA Bertrand en action lors d'une session robotique avec les élèves de Focus School, janvier-mai 2026" loading="lazy" width="1024"
                 height="1024" />
+              <div class="image-caption">
+                <i class="bx bx-image-alt"></i>
+                <span>Session robotique avec les élèves de Focus School · Ouagadougou, 2026</span>
+              </div>
             </div>
             <!-- Page inner vide pour garder la structure -->
             <div class="page-inner page-visual-center"></div>
@@ -423,7 +427,7 @@
                   </li>
                   <li>
                     <span>
-                      En Mai 2026, j'ai accompagné les élèves de Focus School dans la programmation et la
+                      De Janvier à Mai 2026, j'ai accompagné les élèves de Focus School dans la programmation et la
                       robotique sous la supervision de HEADQUARTERS
                     </span>
                   </li>
@@ -605,12 +609,15 @@
         <div class="flip-page" data-chapter="entreprise">
           <div class="page-sheet">
             <div class="page-inner">
-              <p class="page-kicker">III · Notre entreprise</p>
-              <h2 class="heading">Notre <span>entreprise</span></h2>
+              <p class="page-kicker">III · Mon activité</p>
+              <h2 class="heading">Mon <span>activité</span></h2>
               <p class="section-subtitle">
                 Technologie, Design &amp; Ingénierie
               </p>
               <div class="company-intro">
+                <p>
+                  <strong>Zhardware</strong> est mon activité indépendante de développement et ingénierie. Je travaille en solo sur des projets web, IoT et formation, avec un réseau de partenaires selon les besoins.
+                </p>
               </div>
               <div class="company-mission">
                 <h3><i class="bx bx-target-lock"></i> Mission</h3>
@@ -636,8 +643,8 @@
         <div class="flip-page" data-chapter="entreprise">
           <div class="page-sheet">
             <div class="page-inner">
-              <p class="page-kicker right-align">Suite · Entreprise</p>
-              <h2 class="heading">Ce que nous <span>offrons</span></h2>
+              <p class="page-kicker right-align">Suite · Mon activité</p>
+              <h2 class="heading">Ce que je <span>propose</span></h2>
               <ul class="company-offerings">
                 <li>
                   <i class="bx bx-code-alt"></i>
@@ -674,7 +681,7 @@
               </ul>
               <div class="company-cta">
                 <button type="button" class="btn primary" data-goto="contact">
-                  Travailler avec nous
+                  Discutons de votre projet
                 </button>
               </div>
             </div>
@@ -870,7 +877,10 @@
                     <span class="portfolio-card-badge">Projet 01</span>
                     <h3>Vibe Coding</h3>
                     <p>
-                      Plateforme interactive accompagnant une personne de débutant à expert en IA. Apprentissage progressif, projets pratiques et construction de portfolio.
+                      Plateforme interactive accompagnant une personne de débutant à expert en IA. Roadmap structurée en 100+ étapes, exercices pratiques et construction progressive de portfolio.
+                    </p>
+                    <p class="project-tech">
+                      <strong>Stack :</strong> Vue.js, Python, PostgreSQL • <strong>Durée :</strong> 4 mois développement
                     </p>
                     <a href="https://yaba-ai-roadmap-renp.vercel.app/" target="_blank" rel="noopener" class="btn small">
                       <i class="bx bx-link-external"></i> Visiter
@@ -885,7 +895,10 @@
                     <span class="portfolio-card-badge">Projet 05</span>
                     <h3>TCF Canada Prep</h3>
                     <p>
-                      Plateforme spécialisée dans la préparation au TCF Canada. Entraînements adaptés, tests pratiques et sujets régulièrement mis à jour pour maximiser vos chances.
+                      Plateforme spécialisée dans la préparation au TCF Canada. Plus de 500 questions d'entraînement, 20+ tests blancs chronométrés et correction détaillée pour maximiser vos chances.
+                    </p>
+                    <p class="project-tech">
+                      <strong>Stack :</strong> Next.js, MySQL • <strong>Statut :</strong> En développement (70% complété)
                     </p>
                     <a href="#" onclick="alert('Plateforme en cours de développement'); return false;" class="btn small" style="opacity: 0.7; cursor: not-allowed;">
                       <i class="bx bx-link-external"></i> En développement
@@ -900,7 +913,10 @@
                     <span class="portfolio-card-badge">Projet 02</span>
                     <h3>Focus School</h3>
                     <p>
-                      Plateforme de formation pour l'école Focus School, hébergée sur Vercel.
+                      Plateforme web de l'école Focus School, utilisée par 150+ élèves quotidiennement. Gestion des cours, suivi pédagogique et communication école-parents.
+                    </p>
+                    <p class="project-tech">
+                      <strong>Stack :</strong> Vue.js, PHP, MySQL • <strong>Déployé :</strong> Vercel (production)
                     </p>
                     <a href="https://tp-focus-school-676t.vercel.app" target="_blank" rel="noopener" class="btn small">
                       <i class="bx bx-link-external"></i> Visiter
@@ -931,9 +947,10 @@
                     <span class="portfolio-card-badge">Projet 03</span>
                     <h3>Prototype connecté</h3>
                     <p>
-                      Cet prototype est un Robot anti-mine basé sur IoT, électronique &
-                      automatisation oeuvrant dans la détection et la neutralisation des mines artisanals. Il est conçu
-                      pour assurer la sécurité des opérateurs et réduire les risques liés à la démination.
+                      Robot anti-mine autonome basé sur IoT. Détecte et neutralise les mines artisanales tout en garantissant la sécurité des opérateurs à distance. Interface de contrôle temps réel via dashboard web.
+                    </p>
+                    <p class="project-tech">
+                      <strong>Hardware :</strong> Arduino, ESP32, capteurs ultrason • <strong>Software :</strong> Python, Firebase • <strong>Contexte :</strong> Projet BBI Lab 2024
                     </p>
                   </div>
                 </article>
@@ -945,7 +962,10 @@
                     <span class="portfolio-card-badge">Projet 04</span>
                     <h3>Repair Mobile</h3>
                     <p>
-                      Plateforme web dédiée à la réparation de téléphones portables de A à Z. Guide complet, tutoriels et diagnostic en ligne.
+                      Plateforme web complète pour la réparation mobile. 50+ tutoriels vidéo, diagnostic en ligne automatisé et estimation tarifaire. Outil de formation pour 30+ réparateurs débutants.
+                    </p>
+                    <p class="project-tech">
+                      <strong>Stack :</strong> PHP, MySQL, YouTube API • <strong>Prochaine étape :</strong> Marketplace pièces détachées
                     </p>
                   </div>
                 </article>
@@ -957,7 +977,10 @@
                     <span class="portfolio-card-badge">Projet 06</span>
                     <h3>Formation Maintenance PME BBI</h3>
                     <p>
-                      Programme de formation en maintenance informatique pour les membres de Burkina Business Incubator. Photocopieuses, laptops, desktops, software et hardware. Ateliers pratiques et opérationnels.
+                      Programme intensif de formation en maintenance informatique dispensé aux 20 membres de Burkina Business Incubator. Couverture complète : photocopieuses, laptops, desktops, diagnostics software et hardware.
+                    </p>
+                    <p class="project-tech">
+                      <strong>Format :</strong> 3 mois • 12 modules pratiques • <strong>Résultat :</strong> 18/20 certifiés opérationnels
                     </p>
                   </div>
                 </article>

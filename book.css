@@ -2937,6 +2937,51 @@ html.book-mode.theme-light .stat-desc {
   min-height: 100%;
 }
 
+/* Légende image contextuelle */
+.image-caption {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  background: rgba(10, 8, 24, 0.92);
+  backdrop-filter: blur(12px);
+  padding: 0.9rem 1.3rem;
+  border-radius: 0.8rem;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.image-caption i {
+  font-size: 1.4rem;
+  color: var(--accent-color);
+  flex-shrink: 0;
+}
+
+.image-caption span {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* Responsive mobile pour légende */
+@media (max-width: 768px) {
+  .image-caption {
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    padding: 0.8rem 1rem;
+  }
+  
+  .image-caption span {
+    font-size: 0.88rem;
+  }
+}
+
 .about-location {
   margin-top: 1rem;
   font-size: 1.2rem;
@@ -3615,6 +3660,20 @@ html.book-mode.theme-light .stat-desc {
   font-size: 1.04rem;
   line-height: 1.6;
   color: var(--muted-text);
+}
+
+.project-tech {
+  font-size: 0.92rem !important;
+  margin-top: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid rgba(167, 139, 250, 0.12);
+  color: rgba(167, 139, 250, 0.85) !important;
+  line-height: 1.5 !important;
+}
+
+.project-tech strong {
+  color: var(--accent-color);
+  font-weight: 600;
 }
 
 .portfolio-note-plain {
