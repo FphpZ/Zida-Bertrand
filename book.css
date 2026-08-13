@@ -1930,7 +1930,7 @@ html.book-mode.theme-light #theme-toggle {
 
 /* Ajustement léger : descendre juste un peu */
 .cover-inner {
-  margin-top: 2rem; /* Décalage léger vers le bas (réduit de 3rem) */
+  margin-top: 3rem; /* Base pour desktop */
 }
 
 /* Couverture néon tech */
@@ -4176,7 +4176,7 @@ html.book-mode.theme-light .stat-desc {
   }
   
   .cover-inner {
-    margin-top: 2rem;
+    margin-top: 4rem; /* Augmenté pour tablette aussi */
   }
 
   .book-toc {
@@ -4341,17 +4341,19 @@ html.book-mode.theme-light .stat-desc {
     display: flex;
     align-items: center;
     justify-self: center;
-    gap: 1rem; /* Augmenté de 0.5rem pour éviter overlap thème/nom */
+    gap: 0.8rem; /* Réduit pour laisser plus de place au nom */
     margin-left: 0;
   }
 
-  .book-social-link {
-    width: 3.15rem;
-    height: 3.15rem;
+  .book-social-link,
+  #theme-toggle {
+    width: 2.8rem; /* Réduit de 3.15rem pour gagner de la place */
+    height: 2.8rem;
   }
 
-  .book-social-link i {
-    font-size: 1.5rem;
+  .book-social-link i,
+  #theme-toggle i {
+    font-size: 1.3rem; /* Réduit de 1.5rem */
   }
 
   #menu-icon {
@@ -4694,7 +4696,7 @@ html.book-mode.theme-light .stat-desc {
   }
   
   .cover-inner {
-    margin-top: 2rem; /* Augmenté de 1.5rem pour voir le visage */
+    margin-top: 6rem; /* Fortement augmenté pour révéler le visage */
   }
 
   .cover-hint {
