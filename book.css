@@ -4705,7 +4705,7 @@ html.book-mode.theme-light .stat-desc {
   }
   
   .cover-inner {
-    margin-top: 10rem; /* Très fortement augmenté pour 720×1640 - textes en BAS */
+    margin-top: 15rem; /* TRÈS fortement augmenté pour dégager TOUT le visage sur 720×1640 */
   }
 
   .cover-hint {
