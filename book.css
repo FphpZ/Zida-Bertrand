@@ -1139,6 +1139,9 @@
   /* NAVBAR encore plus visible sur petit mobile */
   .book-brand .logo {
     font-size: 2.8rem !important;
+    font-family: 'Roboto Condensed', sans-serif !important; /* Police condensée */
+    font-weight: 600 !important;
+    letter-spacing: -0.02em !important;
   }
   
   .book-header {
@@ -1147,18 +1150,18 @@
   }
   
   .book-header-socials {
-    gap: 1.2rem !important; /* Augmenté pour tous petits mobiles aussi */
+    gap: 0.7rem !important; /* Cohérent avec <=768px */
   }
   
   .book-social-link,
   #theme-toggle {
-    width: 2.6rem !important; /* Réduit comme sur 768px */
-    height: 2.6rem !important;
+    width: 3.15rem !important; /* Taille originale restaurée */
+    height: 3.15rem !important;
   }
   
   .book-social-link i,
   #theme-toggle i {
-    font-size: 1.2rem !important; /* Réduit comme sur 768px */
+    font-size: 1.5rem !important; /* Taille originale restaurée */
   }
   
   /* Cacher l'email sur très petit écran pour gagner de la place */
@@ -1190,6 +1193,9 @@
   
   .book-brand .logo {
     font-size: 3rem !important;
+    font-family: 'Roboto Condensed', sans-serif !important; /* Police condensée */
+    font-weight: 600 !important;
+    letter-spacing: -0.02em !important;
   }
 }
 
@@ -4335,25 +4341,28 @@ html.book-mode.theme-light .stat-desc {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family: 'Roboto Condensed', sans-serif; /* Police condensée pour mobile */
+    font-weight: 600;
+    letter-spacing: -0.02em; /* Légèrement resserré */
   }
 
   .book-header-socials {
     display: flex;
     align-items: center;
     justify-self: center;
-    gap: 1.2rem; /* Augmenté pour 720×1640 */
+    gap: 0.7rem; /* Réduit car icônes plus grandes */
     margin-left: 0;
   }
 
   .book-social-link,
   #theme-toggle {
-    width: 2.6rem; /* Encore réduit pour gagner place */
-    height: 2.6rem;
+    width: 3.15rem; /* Taille originale restaurée pour cliquabilité */
+    height: 3.15rem;
   }
 
   .book-social-link i,
   #theme-toggle i {
-    font-size: 1.2rem; /* Encore réduit */
+    font-size: 1.5rem; /* Taille originale restaurée */
   }
 
   #menu-icon {
