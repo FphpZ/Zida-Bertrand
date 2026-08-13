@@ -1185,7 +1185,7 @@
   }
   
   .book-header-socials {
-    gap: 0.7rem;
+    gap: 1rem; /* Augmenté de 0.7rem pour éviter overlap */
   }
   
   .book-brand .logo {
@@ -4341,7 +4341,7 @@ html.book-mode.theme-light .stat-desc {
     display: flex;
     align-items: center;
     justify-self: center;
-    gap: 0.5rem;
+    gap: 1rem; /* Augmenté de 0.5rem pour éviter overlap thème/nom */
     margin-left: 0;
   }
 
@@ -4694,7 +4694,7 @@ html.book-mode.theme-light .stat-desc {
   }
   
   .cover-inner {
-    margin-top: 1.5rem;
+    margin-top: 2rem; /* Augmenté de 1.5rem pour voir le visage */
   }
 
   .cover-hint {
