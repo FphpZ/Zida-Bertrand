@@ -1147,18 +1147,18 @@
   }
   
   .book-header-socials {
-    gap: 1rem !important; /* Augmenté pour éviter que le thème cache le nom */
+    gap: 1.2rem !important; /* Augmenté pour tous petits mobiles aussi */
   }
   
   .book-social-link,
   #theme-toggle {
-    width: 4.2rem !important;
-    height: 4.2rem !important;
+    width: 2.6rem !important; /* Réduit comme sur 768px */
+    height: 2.6rem !important;
   }
   
   .book-social-link i,
   #theme-toggle i {
-    font-size: 1.9rem !important;
+    font-size: 1.2rem !important; /* Réduit comme sur 768px */
   }
   
   /* Cacher l'email sur très petit écran pour gagner de la place */
@@ -4341,19 +4341,19 @@ html.book-mode.theme-light .stat-desc {
     display: flex;
     align-items: center;
     justify-self: center;
-    gap: 0.8rem; /* Réduit pour laisser plus de place au nom */
+    gap: 1.2rem; /* Augmenté pour 720×1640 */
     margin-left: 0;
   }
 
   .book-social-link,
   #theme-toggle {
-    width: 2.8rem; /* Réduit de 3.15rem pour gagner de la place */
-    height: 2.8rem;
+    width: 2.6rem; /* Encore réduit pour gagner place */
+    height: 2.6rem;
   }
 
   .book-social-link i,
   #theme-toggle i {
-    font-size: 1.3rem; /* Réduit de 1.5rem */
+    font-size: 1.2rem; /* Encore réduit */
   }
 
   #menu-icon {
@@ -4696,7 +4696,7 @@ html.book-mode.theme-light .stat-desc {
   }
   
   .cover-inner {
-    margin-top: 6rem; /* Fortement augmenté pour révéler le visage */
+    margin-top: 10rem; /* Très fortement augmenté pour 720×1640 - textes en BAS */
   }
 
   .cover-hint {
