@@ -2678,12 +2678,6 @@ html.book-mode.theme-light #theme-toggle {
 .portrait-accent {
   display: none; /* Désactivé pour pleine page */
 }
-    circle,
-    rgba(167, 139, 250, 0.35),
-    transparent 70%
-  );
-  filter: blur(1.2rem);
-}
 
 /* Ancien style portrait-ring (désactivé pour pleine page)
 .portrait-ring {
