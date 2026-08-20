@@ -1,7 +1,7 @@
 /* ============================================================
    SCRIPT.JS — Portfolio Livre (ZHARDWARE)
    Gère : PageFlip (tournage de pages), navigation prev/next/dots,
-   menu mobile + sous-menus, starfield, Swiper (témoignages),
+   menu mobile + sous-menus, starfield,
    formulaire de contact via EmailJS.
    ============================================================ */
 
@@ -536,27 +536,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ============================================================
-     3) SWIPER — carrousel des témoignages
-     ============================================================ */
-  if (window.Swiper && document.querySelector(".mySwiper")) {
-    new Swiper(".mySwiper", {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      loop: true,
-      grabCursor: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-  }
-
-  /* ============================================================
-     4) STARFIELD — fond animé (canvas)
+     3) STARFIELD — fond animé (canvas)
      ============================================================ */
   function initStarfield() {
     const container = document.querySelector(".starfield");
@@ -1010,7 +990,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initCoverAnimations();
 
   /* ============================================================
-     5) EMAILJS — formulaire de contact
+     4) EMAILJS — formulaire de contact
      ============================================================ */
   const EMAILJS_PUBLIC_KEY = "V-I50F9aWBxEWV9ak";
   const EMAILJS_SERVICE_ID = "service_gfg6urf";
