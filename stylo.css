@@ -92,7 +92,10 @@ textarea:focus-visible,
 }
 
 html {
-    font-size: 62.5%;
+    /* Racine fluide : 1rem vaut ~11.5px sur mobile et monte jusqu'a 14px sur
+       grand ecran, en suivant la place reellement disponible.
+       En "em" pour respecter la taille de police choisie par l'utilisateur. */
+    font-size: clamp(0.72em, calc(0.594em + 0.15vw + 0.15vh), 0.875em);
     overflow-x: hidden;
 }
 
@@ -1295,10 +1298,7 @@ span {
 
 /*BREAKPOINTS ou responsive*/
 @media(max-width: 1200px) {
-    html {
-        font-size: 55%;
-    }
-
+    /* La racine n'est plus rabaissee ici : clamp() gere l'echelle (voir html plus haut) */
     .home .profession-container {
         height: 85.8rem;
     }
@@ -1578,10 +1578,7 @@ span {
 }
 
 @media (max-width:450px) {
-    html {
-        font-size: 50%;
-    }
-
+    /* La racine n'est plus rabaissee ici : clamp() gere l'echelle (voir html plus haut) */
     #darkMode-icon {
         right: 6rem;
     }
