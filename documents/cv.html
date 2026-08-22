@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>CV — ZIDA Bertrand</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--
+    CV unique, fusion de CV_Developpement_fevrier2026.pdf et CV_MaintenanceFevrier2026.pdf.
+
+    Pourquoi ce fichier est en HTML et pas en PDF : aucun outil PDF n'est installe sur la
+    machine. Ouvrir ce fichier dans un navigateur puis Ctrl+P > "Enregistrer au format PDF"
+    produit le PDF final, en A4, sans rien installer.
+
+    Mise en page volontairement en une seule colonne, sans tableau : c'est le format que les
+    ATS (logiciels de tri des recruteurs) extraient correctement. Une maquette a deux
+    colonnes se lit bien a l'ecran et ressort melangee a l'extraction.
+
+    Regle de fusion appliquee : les deux CV d'origine listaient les memes periodes deux fois,
+    une fois en "Experience" et une fois en "Formations" (BBI 2023-2024, Laboratoire
+    2023-2024, CVP 2024, BBI 2025). Ici chaque periode apparait UNE fois, avec la mention de
+    sa nature reelle (poste, stage, immersion, formation pratique).
+  -->
+  <style>
+    @page {
+      size: A4;
+      margin: 13mm 14mm;
+    }
+
+    :root {
+      --ink: #16181d;
+      --muted: #4a4f5a;
+      --rule: #c8ccd4;
+      --accent: #1f3a68;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: #f2f3f5;
+    }
+
+    body {
+      margin: 0 auto;
+      max-width: 210mm;
+      padding: 13mm 14mm;
+      background: #fff;
+      color: var(--ink);
+      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 10.4pt;
+      line-height: 1.42;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 19pt;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .role {
+      margin-top: 2pt;
+      font-size: 11.4pt;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .contact {
+      margin-top: 6pt;
+      color: var(--muted);
+      font-size: 9.6pt;
+    }
+
+    .contact span:not(:last-child)::after {
+      content: " · ";
+      color: var(--rule);
+    }
+
+    header {
+      padding-bottom: 8pt;
+      border-bottom: 1.5pt solid var(--accent);
+    }
+
+    section {
+      margin-top: 13pt;
+    }
+
+    h2 {
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--accent);
+      padding-bottom: 3pt;
+      border-bottom: 0.75pt solid var(--rule);
+      margin-bottom: 8pt;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .profil {
+      text-align: justify;
+    }
+
+    /* Une entree ne doit jamais etre coupee entre deux pages a l'impression. */
+    .entry {
+      margin-bottom: 9pt;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10pt;
+    }
+
+    h3 {
+      font-size: 10.6pt;
+      font-weight: 600;
+    }
+
+    .org {
+      color: var(--muted);
+      font-size: 9.8pt;
+      font-style: italic;
+    }
+
+    .dates {
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: 9.4pt;
+      white-space: nowrap;
+    }
+
+    ul {
+      margin: 3pt 0 0;
+      padding-left: 14pt;
+    }
+
+    li {
+      margin-bottom: 1pt;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2pt 18pt;
+    }
+
+    .skills-grid div {
+      break-inside: avoid;
+    }
+
+    .skills-grid dt {
+      font-weight: 600;
+      font-size: 9.6pt;
+    }
+
+    .skills-grid dd {
+      margin: 0 0 5pt;
+      color: var(--muted);
+      font-size: 9.8pt;
+    }
+
+    .inline-list {
+      color: var(--muted);
+    }
+
+    @media print {
+
+      html,
+      body {
+        background: #fff;
+      }
+
+      body {
+        max-width: none;
+        padding: 0;
+        font-size: 10pt;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>ZIDA Bertrand</h1>
+    <p class="role">Ingénieur de travaux informatiques</p>
+    <p class="contact">
+      <span>Bénégo, Ouagadougou, Burkina Faso</span>
+      <span>zbertrand.61907@gmail.com</span>
+      <span>+226 51 73 23 73</span>
+      <span>+226 05 56 17 77</span>
+    </p>
+  </header>
+
+  <section>
+    <h2>Profil</h2>
+    <p class="profil">
+      Technicien orienté terrain, solide en maintenance informatique, en support utilisateur et en déploiement de
+      solutions web et mobiles. À l'aise en environnement PME. Capacité démontrée en formation et en accompagnement
+      des utilisateurs.
+    </p>
+  </section>
+
+  <section>
+    <h2>Expérience et stages</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Stage de fin de licence — développement d'applications web</h3>
+        <span class="dates">Août – Novembre 2025</span>
+      </div>
+      <p class="org">ECODEV International, Ouagadougou</p>
+      <ul>
+        <li>Développement d'applications web dans le cadre du stage de licence en Méthodes Informatiques Appliquées à
+          la Gestion.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Formateur en maintenance informatique</h3>
+        <span class="dates">Juillet – Août 2025</span>
+      </div>
+      <p class="org">Burkina Business Incubator (BBI) — Fablab, Ouagadougou</p>
+      <ul>
+        <li>Formation en maintenance informatique des systèmes auprès des membres de l'incubateur, sur le thème de
+          l'accompagnement des PME dans l'entretien de leur parc informatique.</li>
+        <li>Installation et configuration de postes de travail.</li>
+        <li>Accompagnement technique des petites et moyennes entreprises.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Stage — support et maintenance informatique</h3>
+        <span class="dates">Août – Octobre 2024</span>
+      </div>
+      <p class="org">CVP SARL, Ouagadougou</p>
+      <ul>
+        <li>Support informatique aux utilisateurs.</li>
+        <li>Maintenance préventive et corrective des équipements.</li>
+        <li>Suivi des pannes et des interventions techniques.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Technicien en maintenance électronique — formation pratique</h3>
+        <span class="dates">Août 2023 – Février 2024</span>
+      </div>
+      <p class="org">Laboratoire de Réparation Électronique d'Innovation et d'Apprentissage, Ouagadougou</p>
+      <ul>
+        <li>Maintenance d'ordinateurs et de téléphones mobiles.</li>
+        <li>Dépannage matériel et micro-soudure.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Technicien maintenance et support — immersion Internet des objets</h3>
+        <span class="dates">Juillet 2023 – Juillet 2024</span>
+      </div>
+      <p class="org">Burkina Business Incubator (BBI) — Fablab, Ouagadougou</p>
+      <ul>
+        <li>Maintenance de postes informatiques et de périphériques.</li>
+        <li>Configuration de systèmes informatiques.</li>
+        <li>Assistance technique aux utilisateurs.</li>
+        <li>Gestion des incidents matériels et logiciels.</li>
+        <li>Immersion au Fablab sur l'Internet des objets.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Formation</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Licence en Méthodes Informatiques Appliquées à la Gestion</h3>
+        <span class="dates">2022 – 2025</span>
+      </div>
+      <p class="org">Institut Burkinabè des Arts et Métiers (IBAM), Ouagadougou</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Baccalauréat série D</h3>
+        <span class="dates">2021 – 2022</span>
+      </div>
+      <p class="org">Lycée de Nioko</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Compétences</h2>
+    <dl class="skills-grid">
+      <div>
+        <dt>Développement web et mobile</dt>
+        <dd>HTML, CSS, Vue.js, PHP, Laravel, Flutter</dd>
+      </div>
+      <div>
+        <dt>Programmation et algorithmique</dt>
+        <dd>Algorithmique, programmation Arduino</dd>
+      </div>
+      <div>
+        <dt>Maintenance et réparation</dt>
+        <dd>Ordinateurs et téléphones, micro-soudure, dépannage matériel</dd>
+      </div>
+      <div>
+        <dt>Systèmes et support</dt>
+        <dd>Maintenance des systèmes d'exploitation, configuration d'imprimantes, assistance technique</dd>
+      </div>
+      <div>
+        <dt>Design</dt>
+        <dd>Adobe Photoshop, Adobe Illustrator</dd>
+      </div>
+      <div>
+        <dt>Bureautique</dt>
+        <dd>Microsoft Office</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Langues</h2>
+    <p class="inline-list">Français · Anglais · Mooré</p>
+  </section>
+</body>
+
+</html>
