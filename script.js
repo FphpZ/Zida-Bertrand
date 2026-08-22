@@ -1013,8 +1013,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     emailJsReadyPromise = new Promise((resolve, reject) => {
       const fallbackScript = document.createElement("script");
+      // Version exacte, et la meme que la copie locale de index.html : une seule empreinte
+      // couvre les deux fichiers. Auparavant ce repli chargeait la v4 alors que le code
+      // appelle emailjs.init("cle") et send(service, template, params), soit la signature
+      // v3 — il pouvait donc echouer silencieusement.
+      // integrity + crossOrigin : si le CDN renvoyait un autre contenu, le navigateur le
+      // refuse au lieu de l'executer.
       fallbackScript.src =
-        "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
+        "https://cdn.jsdelivr.net/npm/@emailjs/browser@3.12.1/dist/email.min.js";
+      fallbackScript.integrity =
+        "sha384-VDbnsk/qjpIVHPQMkJiROI+vW/7cw0k8TFYVLUabm7EWoLEDwcXh09XQ6gQ86Y0B";
+      fallbackScript.crossOrigin = "anonymous";
       fallbackScript.async = true;
 
       fallbackScript.onload = () => {
@@ -1119,12 +1128,21 @@ document.addEventListener("DOMContentLoaded", () => {
       };
     }
 
-    if (values.name.length < 2) invalidate(nameField);
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) invalidate(emailField);
+    // Bornes hautes : elles doublent les maxlength du HTML, qui se contournent trivialement
+    // (le formulaire est en novalidate, le vrai garde-fou est ici). Sans elles, un message de
+    // plusieurs Mo partirait vers le quota EmailJS. Le telephone est deja borne a 25 par sa
+    // regex, l'objet a 120 juste en dessous.
+    if (values.name.length < 2 || values.name.length > 80) invalidate(nameField);
+    if (
+      values.email.length > 120 ||
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)
+    )
+      invalidate(emailField);
     if (values.phone && !/^[+\d\s().-]{6,25}$/.test(values.phone))
       invalidate(phoneField);
     if (values.subject.length > 120) invalidate(subjectField);
-    if (values.message.length < 10) invalidate(messageField);
+    if (values.message.length < 10 || values.message.length > 2000)
+      invalidate(messageField);
 
     if (firstInvalidField) {
       return {

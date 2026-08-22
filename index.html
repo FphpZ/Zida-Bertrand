@@ -42,14 +42,26 @@
   <link rel="preload" as="image" href="image/moi/Portrait.webp" />
 
   <!-- Google Fonts : Roboto Condensed pour logo mobile -->
+  <!-- Pas d'attribut integrity ici : Google renvoie une feuille differente selon le
+       navigateur (woff2 ou woff), une empreinte figee casserait la police chez une partie
+       des visiteurs. Ce n'est pas un oubli. -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500;600;700&display=swap" rel="stylesheet" />
 
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <!-- Version figee + empreinte : si unpkg renvoyait un autre contenu, le navigateur le refuse. -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"
+    integrity="sha384-42kyIPf7HDYLkGffmxDhSx/3Z/53wGBs3nD6wEFxsbeDc7rMO6mkYbkAcpRsnMU2"
+    crossorigin="anonymous" />
 
   <link href="stylo.css?v=neon1" rel="stylesheet" />
   <link href="book.css?v=neon-loop1" rel="stylesheet" />
 
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
+  <!-- SDK EmailJS, servi depuis ce domaine : aucun code tiers ne s'execute dans la page.
+       Remplace https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js, qui
+       renvoyait un 404 (ce chemin n'existe pas dans la v3 : le fichier est dist/email.min.js).
+       Le formulaire ne tenait donc que par le chargement de secours de script.js.
+       Mise a jour : retelecharger dist/email.min.js, recalculer l'empreinte sha384 et
+       reporter les deux dans script.js (ensureEmailJsReady). -->
+  <script src="js/vendor/emailjs-browser-3.12.1.min.js"></script>
 </head>
 
 <body class="theme-dark book-mode">
@@ -352,8 +364,8 @@
           <div class="page-sheet">
             <!-- Image pleine page en arrière-plan -->
             <div class="about-img book-about-img">
-              <img src="image/moi/presentation.webp" alt="Espace Fablab BBI - Laboratoire de fabrication à Ouagadougou" loading="lazy" width="1024"
-                height="1024" />
+              <img src="image/moi/presentation.webp" alt="Espace Fablab BBI - Laboratoire de fabrication à Ouagadougou" loading="lazy" width="1275"
+                height="1234" />
               <div class="image-caption">
                 <i class="bx bx-image-alt"></i>
                 <span>Fablab BBI (Laboratoire de fabrication) · Ouagadougou</span>
@@ -898,7 +910,7 @@
                 <!-- Projet 01: Vibe Coding - IA/Apprentissage -->
                 <article class="featured-project-card">
                   <img src="image/moi/vibe-coding.webp" alt="Vibe Coding - Plateforme d'apprentissage IA"
-                    loading="lazy" />
+                    loading="lazy" width="1700" height="902" />
                   <div class="featured-project-body">
                     <span class="portfolio-card-badge">Projet 01</span>
                     <h3>Vibe Coding</h3>
@@ -916,7 +928,7 @@
                 <!-- Projet 05: TCF Canada - Web/Formation -->
                 <article class="featured-project-card">
                   <img src="image/moi/postuler-au-canada.webp" alt="TCF Canada - Plateforme préparation tests"
-                    loading="lazy" />
+                    loading="lazy" width="1801" height="687" />
                   <div class="featured-project-body">
                     <span class="portfolio-card-badge">Projet 05</span>
                     <h3>TCF Canada Prep</h3>
@@ -934,7 +946,7 @@
                 <!-- Projet 02: Focus School - Web/Éducation -->
                 <article class="featured-project-card">
                   <img src="image/moi/seance-de-formaton.webp" alt="Focus School - Plateforme de formation"
-                    loading="lazy" />
+                    loading="lazy" width="1448" height="1086" />
                   <div class="featured-project-body">
                     <span class="portfolio-card-badge">Projet 02</span>
                     <h3>Focus School</h3>
@@ -969,7 +981,8 @@
               <!-- Projet 03: Prototype IoT - Hardware -->
               <article class="featured-project-card featured-project-card-large">
                 <img src="image/moi/prototype-connecte.webp"
-                  alt="Prototype IoT avec interface de suivi présenté comme un cas d'étude" loading="lazy" />
+                  alt="Prototype IoT avec interface de suivi présenté comme un cas d'étude" loading="lazy"
+                  width="1086" height="1448" />
                 <div class="featured-project-body">
                   <span class="portfolio-card-badge">Projet 03</span>
                   <h3>Prototype connecté</h3>
@@ -984,7 +997,7 @@
               <!-- Projet 04: Repair Mobile - Service/Formation -->
               <article class="featured-project-card">
                 <img src="image/moi/maintenance.webp" alt="Réparation téléphones - Service de réparation"
-                  loading="lazy" />
+                  loading="lazy" width="1086" height="1448" />
                 <div class="featured-project-body">
                   <span class="portfolio-card-badge">Projet 04</span>
                   <h3>Repair Mobile</h3>
@@ -999,7 +1012,7 @@
               <!-- Projet 06: Formation BBI - Formation professionnelle -->
               <article class="featured-project-card">
                 <img src="image/moi/formation-des-PME.webp" alt="Formation maintenance PME BBI - Programme professionnel"
-                  loading="lazy" />
+                  loading="lazy" width="1448" height="1086" />
                 <div class="featured-project-body">
                   <span class="portfolio-card-badge">Projet 06</span>
                   <h3>Formation Maintenance PME BBI</h3>
@@ -1166,16 +1179,31 @@
                   <label class="sr-only" for="contact-website">Ne pas remplir ce champ</label>
                   <input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off" />
                 </div>
+                <!-- Libelles en .sr-only (stylo.css:18) : ils donnent un nom accessible a chaque
+                     champ sans casser la grille a deux colonnes de .input-box (book.css:647),
+                     car .sr-only est en position: absolute et ne cree donc pas de piste.
+                     Les placeholder restent : ils cessent juste d'etre le seul nom du champ.
+                     Les maxlength doublent les bornes de validateContactForm() dans script.js ;
+                     le formulaire est en novalidate, le vrai garde-fou est celui du JS. -->
                 <div class="input-box">
-                  <input type="text" name="name" placeholder="Votre nom complet" required autocomplete="name" />
-                  <input type="email" name="email" placeholder="Votre adresse email" required autocomplete="email" />
+                  <label class="sr-only" for="contact-name">Nom complet</label>
+                  <input type="text" id="contact-name" name="name" placeholder="Votre nom complet" required
+                    autocomplete="name" maxlength="80" />
+                  <label class="sr-only" for="contact-email">Adresse email</label>
+                  <input type="email" id="contact-email" name="email" placeholder="Votre adresse email" required
+                    autocomplete="email" maxlength="120" />
                 </div>
                 <div class="input-box">
-                  <input type="tel" name="phone" placeholder="Numéro de téléphone" autocomplete="tel" />
-                  <input type="text" name="subject" placeholder="Objet du message" />
+                  <label class="sr-only" for="contact-phone">Numéro de téléphone (optionnel)</label>
+                  <input type="tel" id="contact-phone" name="phone" placeholder="Numéro de téléphone"
+                    autocomplete="tel" maxlength="25" />
+                  <label class="sr-only" for="contact-subject">Objet du message (optionnel)</label>
+                  <input type="text" id="contact-subject" name="subject" placeholder="Objet du message"
+                    maxlength="120" />
                 </div>
-                <textarea name="message" cols="30" rows="6" placeholder="Détails de votre projet..." required
-                  minlength="10"></textarea>
+                <label class="sr-only" for="contact-message">Détails de votre projet</label>
+                <textarea id="contact-message" name="message" cols="30" rows="6"
+                  placeholder="Détails de votre projet..." required minlength="10" maxlength="2000"></textarea>
                 <input type="submit" value="Envoyer le message" class="btn" />
               </form>
               <div id="formFeedback" class="form-feedback" aria-live="polite" hidden>
@@ -1296,6 +1324,12 @@
     </div>
   </main>
 
+  <!-- page-flip injecte sa propre feuille de style au demarrage (celle qui porte .stf__block et
+       .stf__item, indispensables a la mise en page du livre) et reecrit element.style.cssText a
+       chaque image de l'animation. Les deux passent par le mecanisme "style en ligne" du CSP :
+       c'est pour cela, et uniquement pour cela, que vercel.json autorise 'unsafe-inline' dans
+       style-src. script-src reste strict. Ne pas retirer ce mot-cle sans avoir d'abord sorti
+       cette feuille de la bibliotheque, sinon le livre ne s'affiche plus. -->
   <script src="js/vendor/page-flip.browser.js"></script>
   <script src="script.js?v=neon-loop1" defer></script>
 </body>
