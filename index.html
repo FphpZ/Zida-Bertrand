@@ -1332,6 +1332,21 @@
        cette feuille de la bibliotheque, sinon le livre ne s'affiche plus. -->
   <script src="js/vendor/page-flip.browser.js"></script>
   <script src="script.js?v=neon-loop1" defer></script>
+
+  <!-- Mesure d'audience Vercel. Le script est servi depuis ce domaine, il est donc couvert par
+       script-src 'self', et la balise de collecte part vers /<chemin>/view, couverte par
+       connect-src 'self' : vercel.json n'a pas a etre touche, aucun domaine tiers n'est ouvert.
+       Sans cookie ni identifiant persistant (empreinte de requete jetee apres 24 h) : aucun
+       bandeau de consentement n'est requis.
+       Le stub inline "window.va" du snippet officiel est volontairement omis : il ne sert qu'a
+       mettre en file les evenements personnalises (reserves au plan Pro) et il serait de toute
+       facon refuse par script-src, qui n'autorise pas 'unsafe-inline'. Si un jour ce stub est
+       necessaire, le placer au niveau racine de script.js, PAS dans son DOMContentLoaded : les
+       scripts defer s'executent avant cet evenement, il arriverait trop tard.
+       En local (python -m http.server) ce chemin n'existe pas : le 404 est normal, la collecte
+       ne fonctionne que sur un deploiement Vercel posterieur a l'activation dans le tableau
+       de bord (Analytics > Enable). -->
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 
 </html>
